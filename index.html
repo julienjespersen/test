@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+<head>
+	<title>template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<style type="text/css">
+		div.col {
+			transition: all .5s;
+		}
+	</style>
+
+</head>
+<body>
+	<header class="">
+		<nav class="navbar bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Navbar</a>
+				<button id="add" type="button" class="btn btn-primary">+</button>
+			</div>
+		</nav>
+	</header>
+	<main class="container">
+		<div class="row">
+			<template>
+				<div class="col">
+					<img src="https://picsum.photos/200">
+					<input class="abc" type="text">
+					<button class="rm_btn btn btn-danger" onclick="remove(this)">remove</button>
+				</div>
+			</template>
+		</div>
+	</main>
+
+	<script type="text/javascript">
+		let i = 0;
+		const add_btn = document.querySelector('#add');
+		const container = document.querySelector('.row');
+		const template = document.querySelector('template');
+
+		function clickHandler(event) {
+			let clone = template.content
+			let input = clone.querySelector('.abc')
+			input.name = `title[${i++}]` 
+			input.value = i
+			container.appendChild(clone.cloneNode(true));
+		}
+		function remove(node) {
+			node.parentNode.parentNode.removeChild(node.parentNode)
+		}
+
+		add_btn.addEventListener('click', clickHandler);
+	</script>
+</body>
+</html>
