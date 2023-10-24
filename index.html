@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-bs-theme="dark">
 <head>
-	<title>template</title>
+	<title>All purpose tests</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<style type="text/css">
 		div.col {
@@ -15,6 +15,7 @@
 		<nav class="navbar bg-body-tertiary">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">Navbar</a>
+				<input id="qty" type="number" class="" value="4">
 				<button id="add" type="button" class="btn btn-primary">+</button>
 			</div>
 		</nav>
@@ -22,7 +23,7 @@
 	<main class="container">
 		<div class="row">
 			<template>
-				<div class="col">
+				<div class="tile col-md-4">
 					<img src="https://picsum.photos/200">
 					<input class="abc" type="text">
 					<button class="rm_btn btn btn-danger" onclick="remove(this)">remove</button>
@@ -32,23 +33,52 @@
 	</main>
 
 	<script type="text/javascript">
-		let i = 0;
-		const add_btn = document.querySelector('#add');
-		const container = document.querySelector('.row');
-		const template = document.querySelector('template');
+		const grid = 12
+		const nbCols = 3
+		let i = 0
+		const add_btn = document.querySelector('#add')
+		const qty_field = document.querySelector('#qty')
+		const container = document.querySelector('.row')
+		const template = document.querySelector('template')
 
 		function clickHandler(event) {
-			let clone = template.content
-			let input = clone.querySelector('.abc')
-			input.name = `title[${i++}]` 
-			input.value = i
-			container.appendChild(clone.cloneNode(true));
+			while (container.hasChildNodes()) {
+				container.removeChild(container.lastChild)
+			}
+			// container.querySelectorAll('.tile').forEach(element => {
+
+			// })
+			for (let index = 0; index < qty_field.value; index++) {
+				let templateContent = template.content
+				let input = templateContent.querySelector('.abc')
+				input.name = `title[${i++}]` 
+				input.value = i
+				let clone = templateContent.cloneNode(true)
+				clone.querySelector('img').src = 'https://picsum.photos/200/300?random=' + i
+				container.appendChild(clone)
+			}
+			calculate()
 		}
 		function remove(node) {
 			node.parentNode.parentNode.removeChild(node.parentNode)
+			calculate()
+		}
+		function calculate() {
+			let nbItems = container.querySelectorAll('.tile').length
+			let remain = nbItems % nbCols
+			let firstItem = container.querySelectorAll('.tile')[0]
+			// console.log(remain)
+			// plz improve
+			if (remain == 1) {
+				firstItem.className = 'col-md-12'
+			} else if (remain == 2) {
+				firstItem.className = 'col-md-8'
+			} else {
+				containerfirstItem.className = 'col-md-4'
+			}
 		}
 
-		add_btn.addEventListener('click', clickHandler);
+		add_btn.addEventListener('click', clickHandler)
 	</script>
 </body>
 </html>
