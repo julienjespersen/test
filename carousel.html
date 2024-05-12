@@ -1,0 +1,126 @@
+<html lang="en" data-bs-theme="_dark">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>carousel</title>
+	<link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+:root,
+[data-bs-theme=light] {
+  --bs-primary: #6eb004;
+  --bs-primary-rgb: 110, 22, 253;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 2rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.3;
+  --bs-body-color: #212529;
+  --bs-body-bg: #fff;
+  --bs-secondary-color: rgba(33, 37, 41, 0.75);
+  --bs-secondary-bg: #e9ecef;
+  --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+  --bs-tertiary-bg: #f8f9fa;
+  --bs-heading-color: inherit;
+  --bs-link-color: #fd0db5;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: #0a58ca;
+}
+[data-bs-theme=dark] {
+  color-scheme: dark;
+  --bs-body-color: #dee2e6;
+  --bs-body-bg: #212529;
+  --bs-secondary-color: rgba(222, 226, 230, 0.75);
+  --bs-secondary-bg: #343a40;
+  --bs-tertiary-color: rgba(222, 226, 230, 0.5);
+  --bs-tertiary-bg: #2b3035;
+  --bs-heading-color: inherit;
+  --bs-link-color: #6ea8fe;
+  --bs-link-hover-color: #8bb9fe;
+  --bs-code-color: #e685b5;
+  --bs-highlight-color: #dee2e6;
+  --bs-highlight-bg: #664d03;
+  --bs-border-color: #495057;
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
+}
+	img {
+		height: 300px;
+	}
+</style>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<h1>Are carousels back?</h1>
+		</div>
+		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<a href="#" class="carousel-item active text-bg-primary">
+					<picture>
+						<source srcset="https://picsum.photos/seed/juju/1000/300" media="(min-width: 992px)">
+						<source srcset="https://picsum.photos/seed/juju/500/150" media="(min-width: 576px)">
+						<img src="https://picsum.photos/seed/juju/500/150" class="d-block w-100" alt="…">
+					</picture>
+					<div class="carousel-caption d-block">
+						<p class="display-1 text-start fw-bold">First slide label</p>
+						<p class="text-start">Some representative placeholder content for the second slide.</p>
+					</div>
+				</a>
+				<a href="#" class="carousel-item text-bg-primary">
+					<picture>
+						<source srcset="https://picsum.photos/seed/baba/1000/300" media="(min-width: 992px)">
+						<source srcset="https://picsum.photos/seed/baba/500/150" media="(min-width: 576px)">
+						<img src="https://picsum.photos/seed/baba/500/150" class="d-block w-100" alt="…">
+					</picture>
+					<div class="carousel-caption d-none d-md-block">
+						<p class="display-1 text-start fw-bold">Second slide label</p>
+						<p class="text-start">Some representative placeholder content for the second slide.</p>
+					</div>
+				</a>
+				<a href="#" class="carousel-item text-bg-secondary">
+					<picture>
+						<source srcset="https://picsum.photos/seed/test/1000/300" media="(min-width: 992px)">
+						<source srcset="https://picsum.photos/seed/test/500/150" media="(min-width: 576px)">
+						<img src="https://picsum.photos/seed/test/500/150" class="d-block w-100" alt="…">
+					</picture>
+					<div class="carousel-caption d-none d-md-block">
+						<p class="display-1 text-start fw-bold">Third slide label</p>
+						<p class="text-start">Some representative placeholder content for the second slide.</p>
+					</div>
+				</a>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		<div class="row">
+			<a href="#" >go!</a>
+			<p class="text-primary"> hello </p>
+		</div>
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+	</script>
+</body>
+
+</html>
