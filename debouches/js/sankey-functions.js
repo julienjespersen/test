@@ -83,7 +83,7 @@ async function getData(fac, broadProspect, year) {
         case "Toutes":
             if (fac.length === 0 && broadProspect.length === 0) {
                 try {
-                    const data = await readJSONFile('../data/Toutes-data.json');
+                    const data = await readJSONFile('/data/Toutes-data.json');
                     return data["Facs-Debouches"];
                 } catch (error) {
                     console.error('Error reading JSON file:', error);
@@ -93,7 +93,7 @@ async function getData(fac, broadProspect, year) {
 
             if (fac.length > 0 && broadProspect.length === 0) {
                 try {
-                    const data = await readJSONFile('../data/Toutes-data.json');
+                    const data = await readJSONFile('/data/Toutes-data.json');
                     return data["Diplomes-" + fac];
                 } catch (error) {
                     console.error('Error reading JSON file:', error);
@@ -103,7 +103,7 @@ async function getData(fac, broadProspect, year) {
 
             if (fac.length === 0 && broadProspect.length > 0) {
                 try {
-                    const data = await readJSONFile('../data/Toutes-data.json');
+                    const data = await readJSONFile('/data/Toutes-data.json');
                     return data["Facs-" + broadProspect];
                 } catch (error) {
                     console.error('Error reading JSON file:', error);
@@ -113,7 +113,7 @@ async function getData(fac, broadProspect, year) {
 
             if (fac.length > 0 && broadProspect.length > 0) {
                 try {
-                    const data = await readJSONFile('../data/Toutes-data.json');
+                    const data = await readJSONFile('/data/Toutes-data.json');
                     return data[fac + "-" + broadProspect];
                 } catch (error) {
                     console.error('Error reading JSON file:', error);
@@ -125,7 +125,7 @@ async function getData(fac, broadProspect, year) {
             // Par défaut, c'est une année. On ouvre donc le fichier correspondant
             if (fac.length === 0 && broadProspect.length === 0) {
                 try {
-                    const data = await readJSONFile('../data/' + year +'-data.json');
+                    const data = await readJSONFile('/data/' + year +'-data.json');
                     return data["Facs-Debouches"];
                 } catch (error) {
                     console.error('Error reading JSON file:', error);
@@ -135,7 +135,7 @@ async function getData(fac, broadProspect, year) {
 
             if (fac.length > 0 && broadProspect.length === 0) {
                 try {
-                    const data = await readJSONFile('../data/' + year +'-data.json');
+                    const data = await readJSONFile('/data/' + year +'-data.json');
                     return data["Diplomes-" + fac];
                 } catch (error) {
                     console.error('Error reading JSON file:', error);
@@ -145,7 +145,7 @@ async function getData(fac, broadProspect, year) {
 
             if (fac.length === 0 && broadProspect.length > 0) {
                 try {
-                    const data = await readJSONFile('../data/' + year +'-data.json');
+                    const data = await readJSONFile('/data/' + year +'-data.json');
                     return data["Facs-" + broadProspect];
                 } catch (error) {
                     console.error('Error reading JSON file:', error);
@@ -155,7 +155,7 @@ async function getData(fac, broadProspect, year) {
 
             if (fac.length > 0 && broadProspect.length > 0) {
                 try {
-                    const data = await readJSONFile('../data/' + year +'-data.json');
+                    const data = await readJSONFile('/data/' + year +'-data.json');
                     return data[fac + "-" + broadProspect];
                 } catch (error) {
                     console.error('Error reading JSON file:', error);
