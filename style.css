@@ -1,0 +1,73 @@
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.alumni-sans-regular {
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+:root,
+[data-bs-theme=light] {
+    --bs-primary: #6eb004;
+    --bs-primary-rgb: 110, 22, 253;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-font-sans-serif: "Alumni Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 2rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.3;
+    --bs-body-color: #212529;
+    --bs-body-bg: #fff;
+    --bs-secondary-color: rgba(33, 37, 41, 0.75);
+    --bs-secondary-bg: #e9ecef;
+    --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+    --bs-tertiary-bg: #f8f9fa;
+    --bs-heading-color: inherit;
+    --bs-link-color: #fd0db5;
+    --bs-link-color-rgb: 110, 22, 253;
+    --bs-link-decoration: underline;
+    --bs-link-hover-color: #0a58ca;
+}
+
+[data-bs-theme=dark] {
+    color-scheme: dark;
+    --bs-body-color: #dee2e6;
+    --bs-body-bg: #212529;
+    --bs-secondary-color: rgba(222, 226, 230, 0.75);
+    --bs-secondary-bg: #343a40;
+    --bs-tertiary-color: rgba(222, 226, 230, 0.5);
+    --bs-tertiary-bg: #2b3035;
+    --bs-heading-color: inherit;
+    --bs-link-color: #6ea8fe;
+    --bs-link-hover-color: #8bb9fe;
+    --bs-code-color: #e685b5;
+    --bs-highlight-color: #dee2e6;
+    --bs-highlight-bg: #664d03;
+    --bs-border-color: #495057;
+    --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
+}
+
+html {
+    background-color: rgb(var(--bs-primary-rgb));
+}
+
+img {
+    height: 300px;
+}
