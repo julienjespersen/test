@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to test js</title>
+</head>
+<body>
+    <pre>
+
+    </pre>
+    <script>
+
+const array = [1, 2, 3, 4, 5];
+const critere = 3;
+const pre = document.querySelector('pre')
+
+pre.textContent = array + '\n'
+
+
+array.forEach((element, index) => {
+  if (element === critere) {
+    array.splice(index, 1);
+  }
+});
+
+pre.textContent += array + '\n'
+
+    </script>
+</body>
+</html>
