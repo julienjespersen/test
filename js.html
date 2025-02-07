@@ -5,25 +5,70 @@
     <title>to test js</title>
 </head>
 <body>
+  <template id="tml-contributions">
+    <div class="box">
+      <h3>hello</h3>
+      <p>world</p>
+    </div>
+  </template>
+  <template id="personne">
+    <li></li>
+  </template>
+  <ul>
+    <li><a href="#contributions">contributions</a></li>
+    <li><a href="#personnes">personnes</a></li>
+    <li><a href="#rues">rues</a></li>
+  </ul>
+  <div id="container">
+
+  </div>
     <pre>
 
     </pre>
     <script>
-
-const array = [1, 2, 3, 4, 5];
-const critere = 3;
+const initFile = 'contributions.json'
 const pre = document.querySelector('pre')
+const templateContent = document.querySelector('#tml').content
+const container = document.querySelector('#container')
 
-pre.textContent = array + '\n'
+window.addEventListener('hashchange', (event) => {
+  console.log('Hash changed:', window.location.hash.substring(1))
+  getData(window.location.hash.substring(1) + '.json')
+})
 
 
-array.forEach((element, index) => {
-  if (element === critere) {
-    array.splice(index, 1);
+
+function test (value) {
+  console.log(value)
+}
+function buildOne(mediaRec) {
+  while (container.hasChildNodes()) {
+    container.removeChild(container.lastChild)
   }
-});
+  console.log(mediaRec)
+  let clone = templateContent.cloneNode(true)
+  clone.querySelector('h3').textContent = mediaRec.nom
+  // clone.querySelector('.box p').content = mediaRec.key
+  container.appendChild(clone)
+}
 
-pre.textContent += array + '\n'
+function getData(file) {
+
+  fetch(file)
+  .then(response => response.json())
+  .then(data => {
+    console.table(data[2].data[0])
+    // console.log(data[2].data[0].nom)
+    buildOne(data[2].data[0])
+  }
+  
+  )
+  .catch(error => console.error('Error fetching JSON:', error));
+}
+
+getData(initFile)
+
+
 
     </script>
 </body>
